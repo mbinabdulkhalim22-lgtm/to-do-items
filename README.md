@@ -157,3 +157,494 @@ The scripts and documentation in this project are released under the [MIT Licens
 ## Contributions
 
 Contributions are welcome! See our [Contributor's Guide](docs/contributors.md).
+AI Tutor
+
+← All projects
+Todo List API
+Build a RESTful API to allow users to manage their to-do list.
+
+beginner
+RESTful API
+Database
+CRUD Operations
+Data Modeling
+Authentication
+Details
+Solutions
+
+Started working 2 hours ago. Follow these tips to get most out of it.
+Started Working
+
+Submit Solution
+5 upvotes
+10 upvotes
+In this project you are required to develop a RESTful API to allow users to manage their to-do list. The previous backend projects have only focused on the CRUD operations, but this project will require you to implement user authentication as well.
+
+Todo List API
+Goals
+The skills you will learn from this project include:
+
+User authentication
+
+Schema design and Databases
+
+RESTful API design
+
+CRUD operations
+
+Error handling
+
+Security
+
+Requirements
+You are required to develop a RESTful API with following endpoints
+
+User registration to create a new user
+
+Login endpoint to authenticate the user and generate a token
+
+CRUD operations for managing the to-do list
+
+Implement user authentication to allow only authorized users to access the to-do list
+
+Implement error handling and security measures
+
+Use a database to store the user and to-do list data (you can use any database of your choice)
+
+Implement proper data validation
+
+Implement pagination and filtering for the to-do list
+
+Given below is a list of the endpoints and the details of the request and response:
+
+User Registration
+Register a new user using the following request:
+
+javascript
+
+POST /register
+{
+  "name": "John Doe",
+  "email": "john@doe.com",
+  "password": "password"
+}
+This will validate the given details, make sure the email is unique and store the user details in the database. Make sure to hash the password before storing it in the database. Respond with a token that can be used for authentication if the registration is successful.
+
+json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+}
+The token can either be a JWT or a random string that can be used for authentication. We leave it up to you to decide the implementation details.
+
+User Login
+Authenticate the user using the following request:
+
+javascript
+
+POST /login
+{
+  "email": "john@doe.com",
+  "password": "password"
+}
+This will validate the given email and password, and respond with a token if the authentication is successful.
+
+json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+}
+Create a To-Do Item
+Create a new to-do item using the following request:
+
+javascript
+
+POST /todos
+{
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, and bread"
+}
+User must send the token received from the login endpoint in the header to authenticate the request. You can use the Authorization header with the token as the value. In case the token is missing or invalid, respond with an error and status code 401.
+
+json
+
+{
+  "message": "Unauthorized"
+}
+Upon successful creation of the to-do item, respond with the details of the created item.
+
+json
+
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, and bread"
+}
+Update a To-Do Item
+Update an existing to-do item using the following request:
+
+javascript
+
+PUT /todos/1
+{
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, bread, and cheese"
+}
+Just like the create todo endpoint, user must send the token received. Also make sure to validate the user has the permission to update the to-do item i.e. the user is the creator of todo item that they are updating. Respond with an error and status code 403 if the user is not authorized to update the item.
+
+json
+
+{
+  "message": "Forbidden"
+}
+Upon successful update of the to-do item, respond with the updated details of the item.
+
+json
+
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, bread, and cheese"
+}
+Delete a To-Do Item
+Delete an existing to-do item using the following request:
+
+javascript
+
+DELETE /todos/1
+User must be authenticated and authorized to delete the to-do item. Upon successful deletion, respond with the status code 204.
+
+Get To-Do Items
+Get the list of to-do items using the following request:
+
+javascript
+
+GET /todos?page=1&limit=10
+User must be authenticated to access the tasks and the response should be paginated. Respond with the list of to-do items along with the pagination details.
+
+json
+
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "description": "Buy milk, eggs, bread"
+    },
+    {
+      "id": 2,
+      "title": "Pay bills",
+      "description": "Pay electricity and water bills"
+    }
+  ],
+  "page": 1,
+  "limit": 10,
+  "total": 2
+}
+Bonus
+Implement filtering and sorting for the to-do list
+
+Implement unit tests for the API
+
+Implement rate limiting and throttling for the API
+
+Implement refresh token mechanism for the authentication
+
+This project will help you understand how to design and implement a RESTful API with user authentication. You will also learn how to work with databases, handle errors, and implement security measures.
+
+Join the Community
+
+roadmap.sh is among the top 10 most starred projects on GitHub and is visited by hundreds of thousands of developers every month.
+
+Top 10
+ out of 28M!
+
+373K
+
+GitHub Stars
+
+Star us on GitHub
+Help us reach #1
++90k
+every month
+
++3.2M
+
+Registered Users
+
+Register yourself
+Commit to your growth
++2k
+every month
+
+52K
+
+Discord Members
+
+Join on Discord
+Join the community
+Roadmaps
+Guides
+FAQs
+YouTube
+
+roadmap.sh
+by
+@nilbuild
+
+Community created roadmaps, best practices, projects, articles, resources and journeys to help you choose your path and grow in your career.
+
+© roadmap.sh·Terms·Privacy·
+
+ThewNewStack
+The top DevOps resource for Kubernetes, cloud-native computing, and large-scale development and deployment.
+
+DevOps·Kubernetes·Cloud-Native
+
+Cookie Settings
+AI Tutor
+
+← All projects
+Todo List API
+Build a RESTful API to allow users to manage their to-do list.
+
+beginner
+RESTful API
+Database
+CRUD Operations
+Data Modeling
+Authentication
+Details
+Solutions
+
+Started working 2 hours ago. Follow these tips to get most out of it.
+Started Working
+
+Submit Solution
+5 upvotes
+10 upvotes
+In this project you are required to develop a RESTful API to allow users to manage their to-do list. The previous backend projects have only focused on the CRUD operations, but this project will require you to implement user authentication as well.
+
+Todo List API
+Goals
+The skills you will learn from this project include:
+
+User authentication
+
+Schema design and Databases
+
+RESTful API design
+
+CRUD operations
+
+Error handling
+
+Security
+
+Requirements
+You are required to develop a RESTful API with following endpoints
+
+User registration to create a new user
+
+Login endpoint to authenticate the user and generate a token
+
+CRUD operations for managing the to-do list
+
+Implement user authentication to allow only authorized users to access the to-do list
+
+Implement error handling and security measures
+
+Use a database to store the user and to-do list data (you can use any database of your choice)
+
+Implement proper data validation
+
+Implement pagination and filtering for the to-do list
+
+Given below is a list of the endpoints and the details of the request and response:
+
+User Registration
+Register a new user using the following request:
+
+javascript
+
+POST /register
+{
+  "name": "John Doe",
+  "email": "john@doe.com",
+  "password": "password"
+}
+This will validate the given details, make sure the email is unique and store the user details in the database. Make sure to hash the password before storing it in the database. Respond with a token that can be used for authentication if the registration is successful.
+
+json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+}
+The token can either be a JWT or a random string that can be used for authentication. We leave it up to you to decide the implementation details.
+
+User Login
+Authenticate the user using the following request:
+
+javascript
+
+POST /login
+{
+  "email": "john@doe.com",
+  "password": "password"
+}
+This will validate the given email and password, and respond with a token if the authentication is successful.
+
+json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+}
+Create a To-Do Item
+Create a new to-do item using the following request:
+
+javascript
+
+POST /todos
+{
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, and bread"
+}
+User must send the token received from the login endpoint in the header to authenticate the request. You can use the Authorization header with the token as the value. In case the token is missing or invalid, respond with an error and status code 401.
+
+json
+
+{
+  "message": "Unauthorized"
+}
+Upon successful creation of the to-do item, respond with the details of the created item.
+
+json
+
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, and bread"
+}
+Update a To-Do Item
+Update an existing to-do item using the following request:
+
+javascript
+
+PUT /todos/1
+{
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, bread, and cheese"
+}
+Just like the create todo endpoint, user must send the token received. Also make sure to validate the user has the permission to update the to-do item i.e. the user is the creator of todo item that they are updating. Respond with an error and status code 403 if the user is not authorized to update the item.
+
+json
+
+{
+  "message": "Forbidden"
+}
+Upon successful update of the to-do item, respond with the updated details of the item.
+
+json
+
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": "Buy milk, eggs, bread, and cheese"
+}
+Delete a To-Do Item
+Delete an existing to-do item using the following request:
+
+javascript
+
+DELETE /todos/1
+User must be authenticated and authorized to delete the to-do item. Upon successful deletion, respond with the status code 204.
+
+Get To-Do Items
+Get the list of to-do items using the following request:
+
+javascript
+
+GET /todos?page=1&limit=10
+User must be authenticated to access the tasks and the response should be paginated. Respond with the list of to-do items along with the pagination details.
+
+json
+
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "description": "Buy milk, eggs, bread"
+    },
+    {
+      "id": 2,
+      "title": "Pay bills",
+      "description": "Pay electricity and water bills"
+    }
+  ],
+  "page": 1,
+  "limit": 10,
+  "total": 2
+}
+Bonus
+Implement filtering and sorting for the to-do list
+
+Implement unit tests for the API
+
+Implement rate limiting and throttling for the API
+
+Implement refresh token mechanism for the authentication
+
+This project will help you understand how to design and implement a RESTful API with user authentication. You will also learn how to work with databases, handle errors, and implement security measures.
+
+Join the Community
+
+roadmap.sh is among the top 10 most starred projects on GitHub and is visited by hundreds of thousands of developers every month.
+
+Top 10
+ out of 28M!
+
+373K
+
+GitHub Stars
+
+Star us on GitHub
+Help us reach #1
++90k
+every month
+
++3.2M
+
+Registered Users
+
+Register yourself
+Commit to your growth
++2k
+every month
+
+52K
+
+Discord Members
+
+Join on Discord
+Join the community
+Roadmaps
+Guides
+FAQs
+YouTube
+
+roadmap.sh
+by
+@nilbuild
+
+Community created roadmaps, best practices, projects, articles, resources and journeys to help you choose your path and grow in your career.
+
+© roadmap.sh·Terms·Privacy·
+
+ThewNewStack
+The top DevOps resource for Kubernetes, cloud-native computing, and large-scale development and deployment.
+
+DevOps·Kubernetes·Cloud-Native
+
+Cookie Settings
+
